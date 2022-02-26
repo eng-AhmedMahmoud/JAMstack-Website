@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   const [text, setText] = useState('')
   useEffect(() => {
-    fetch("/.netlify/functions/hello-world")
+    fetch("/.netlify/functions/node-fetch")
     .then((res)=> res.json())
     .then((res) => setText(res.msg))
   }, [])
