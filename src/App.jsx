@@ -1,15 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import logo from './favicon.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [text, setText] = useState('')
+  useEffect(() => {
+    fetch("/.netlify/functions/node-fetch")
+    .then((res)=> res.json())
+    .then((res) => setText(res.msg))
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+        <p>{text}</p>
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
@@ -37,6 +42,7 @@ function App() {
             Vite Docs
           </a>
         </p>
+        <code>netlify-lambda to run the node_modules for my functions needs weepback also to make my enviroment variable accessible i need wepback so fu*k vite</code>
       </header>
     </div>
   )
