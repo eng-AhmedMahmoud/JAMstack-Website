@@ -43,6 +43,7 @@ function App() {
           </a>
         </p>
         <code>netlify-lambda to run the node_modules for my functions needs weepback also to make my enviroment variable accessible i need wepback so fu*k vite</code>
+        {/* "postinstall": "netlify-lambda install", */}
       </header>
     </div>
   )

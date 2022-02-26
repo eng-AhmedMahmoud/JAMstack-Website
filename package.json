@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "postinstall": "netlify-lambda install",
     "prebuild": "echo $MY_SECRET",
     "build": "vite build",
     "preview": "vite preview"
